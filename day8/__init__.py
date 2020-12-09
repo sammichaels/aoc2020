@@ -100,7 +100,7 @@ class CPU:
     def step(self) -> None:
         if self._pc > self._pgmsize:
             raise NXMemoryError
-        op = self._memory[self._pc]
+        op = CPUInstr(self._memory[self._pc])
         self._pc += 1
         opfunc = self._op_table.get(op, None)
         if callable(opfunc):
