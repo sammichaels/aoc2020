@@ -36,6 +36,7 @@ def part2(nums: list[str], weak: int) -> int:
         for spos in range(pos + 1, maxpos+1, 1):
             if weak == sum(candidates[pos:spos]):
                 return min(candidates[pos:spos]) + max(candidates[pos:spos])
+    return 0
 
 
 if __name__ == '__main__':
